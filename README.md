@@ -1,4 +1,4 @@
-# DeepFake Detection
+# Multiomodal DeepFake Detection using Spatiotemporal and Contrastive Supervision
 ## INTRODUCTION
 
 Deepfakes have improved significantly because of breakthroughs in deep learning, making it feasible to produce very realistic but manipulated video or image contents. Such fake contents of media seriously threaten several domains, including misinformation, identity deception, digital security, and social trust. Conventional deep fake detection solutions based on single-modal or static visual characteristics would fail to generalize against highly sophisticated methods of attacks.
