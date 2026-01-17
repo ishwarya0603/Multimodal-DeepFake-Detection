@@ -9,7 +9,7 @@ In this approach, for effective deepfake image and video manipulation pattern de
 Further, the use of contrastive supervision is made to improve the ability of the discriminative model by maximizing the separation of the feature space of the real and generated samples. The learning technique allows the model to pay attention to significant differences instead of focusing on trivial patterns, hence improving generalization capability. The proposed method is expected to offer a more accurate, reliable, and efficient way of detecting deepfakes.
 
 ### Datasets used:
-The datasets used for training this model are: FakeAVCeleb, Faceforensics++ and ASV Spoof 2019. The datasets are cleaned and a metadata CSV is created for tracking video path, split and manipulation.
+The datasets used for training this model are: FakeAVCeleb[1], Faceforensics++ and ASV Spoof 2019. The datasets are cleaned and a metadata CSV is created for tracking video path, split and manipulation.
 
 ## Spatiotemporal model- EfficientNet-B2 and bi-LSTM:
 
