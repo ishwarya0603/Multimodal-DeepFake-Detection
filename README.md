@@ -17,19 +17,22 @@ Starting with the spatiotemporal model, In our approach, we train the spatial mo
 Due to large class imbalance between real and fake videos in the dataset, three techniques of balanced sampling was implemented: class balanced sampling, Identity balanced sampling and Manipulation aware sampling.
 Spatial heatmap to predict fakes:
 <img width="4500" height="1500" alt="annotated_heatmaps" src="https://github.com/user-attachments/assets/2dbb83aa-2961-41bf-a482-88c5b2051319" />
-
-# Spatial model predicting fake videos:
+### Spatial model predicting fake videos:
 <img width="869" height="802" alt="true pos" src="https://github.com/user-attachments/assets/78b9a0da-6859-4298-8996-04d43054aa07" />
 
-For temporal training, we performed feature training to extract .npy files from the dataset using the freezed backbone of the EfficientNet-B2 for faster and efficient training. Three types of temporal models were trained on the extracted features - Temporal Convolution Network (TCN), Bi-LSTM(Long Short Term Memory) and Temporal Transformer. The performance of each model as a comparison is plotted below.
+For temporal training, we performed feature training to extract .npy files from the dataset using the freezed backbone of the EfficientNet-B2 for faster and efficient training. Three types of temporal models were trained on the extracted features - Temporal Convolution Network (TCN), Bi-LSTM(Long Short Term Memory) and Temporal Transformer. 
 
+The performance of each model as a comparison is plotted below.
 <img width="1317" height="370" alt="Screenshot (99)" src="https://github.com/user-attachments/assets/d1b7ff3d-67a0-46ca-a314-f559eb7b91c8" />
 <img width="1079" height="511" alt="Screenshot (98)" src="https://github.com/user-attachments/assets/ca378f1b-ce70-48d4-9584-2e75f23a51c5" />
 The chosen bi-LSTM model is further fine-tuned using contrastive learning using Triplet Loss.
 
 ## Audio Training (CRNN):
-For detecting audio inconsistencies, temporal audio models like CRNN is used on the widely recognized ASV Spoof 2019 dataset =, achieving an accuracy and AUC of 99%.
+For detecting audio inconsistencies, temporal audio models like CRNN is trained on the widely recognized ASV Spoof 2019 dataset, achieving an accuracy and AUC of 99%.
 
-Audio comparison (Real vs Fake):
+### Audio comparison (Real vs Fake):
 <img width="4552" height="2445" alt="fakeavceleb_spectrogram_comparison" src="https://github.com/user-attachments/assets/92ddc483-0d5d-4206-830b-3f5662eddbd2" />
 
+Contrastive Learning is further applied on all the three embeddings - Spatial, Temporal and Audio embeddings in order to generalize the final model even to unseen datasets.
+
+Further on, we aim on incorporating Fusion with Gated concatenation fusion to enable the model to identify which modalities to trust more and which model is more trustworthy. (Work in Progress)
